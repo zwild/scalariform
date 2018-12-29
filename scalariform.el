@@ -6,7 +6,7 @@
 ;; URL: https://github.com/zwild/scalariform
 ;; Package-Requires: ((s "1.12.0") (f "0.20.0"))
 ;; Version: 0.1
-;; Keywords: scala scalariform
+;; Keywords: processes scala scalariform
 
 ;;; License:
 
