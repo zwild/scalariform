@@ -1,0 +1,21 @@
+#+startup: showall
+
+* scalariform.el
+  Format your Scala code with [[https://github.com/scala-ide/scalariform][scalariform]] in Emacs.
+
+** Install
+   #+begin_src sh
+   brew install scalariform
+   #+end_src
+
+** Usage
+   ~M-x:~ with command ~scalariform-format-region~ or ~scalariform-format-region-or-buffer~.
+
+** Variables
+   If you want to use a property file for scalariform, you can
+   #+begin_src elisp
+   (setq scalariform-use-properties-file-p t)
+   (setq scalariform-properties-file "~/.scalariform.conf")
+   #+end_src
+
+   You can also customize the variable ~scalariform-program-args~ to past extra arguments to scalariform.
