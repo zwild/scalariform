@@ -1,12 +1,12 @@
 ;;; scalariform.el --- Format Scala code with scalariform.
 
 ;; Copyright (C) 2018-2019 Wei Zhao
-;; Keywords: scala scalariform
 ;; Author: zwild <judezhao@outlook.com>
 ;; Created: 2018-12-26T22:41:19+08:00
 ;; URL: https://github.com/zwild/scalariform
 ;; Package-Requires: ((s "1.12.0") (f "0.20.0"))
 ;; Version: 0.1
+;; Keywords: scala scalariform
 
 ;;; License:
 
@@ -27,6 +27,7 @@
 
 
 ;;; Commentary:
+
 ;; M-x: with command scalariform-format-region or scalariform-format-region-or-buffer.
 ;; If you want to use a property file for scalariform, you can
 ;; (setq scalariform-use-properties-file-p t)
@@ -64,7 +65,10 @@
   :group 'scalariform)
 
 (defun scalariform-call-process (start end buffer)
-  "A process to call scalariform."
+  "A process to call scalariform.
+Argument START: region to start.
+Argument END: region to end.
+Argument BUFFER: the buffer to call this process."
   (let ((args '("--stdin")))
     (when scalariform-use-properties-file-p
       (push (format "-p=%s" (f-long scalariform-properties-file)) args))
@@ -74,7 +78,9 @@
 
 ;;;###autoload
 (defun scalariform-format-region (start end)
-  "Format the region."
+  "Format the region.
+Argument START: region to start.
+Argument END: region to end."
   (interactive "r")
   (let* ((original-point (point))
          (buffer scalariform-buffer-name)
