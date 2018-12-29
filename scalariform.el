@@ -1,13 +1,12 @@
-;;; scalariform.el --- Format Scala code with scalariform in Emacs.
+;;; scalariform.el --- Format Scala code with scalariform.
 
 ;; Copyright (C) 2018-2019 Wei Zhao
-
+;; Keywords: scala scalariform
 ;; Author: zwild <judezhao@outlook.com>
 ;; Created: 2018-12-26T22:41:19+08:00
 ;; URL: https://github.com/zwild/scalariform
 ;; Package-Requires: ((s "1.12.0") (f "0.20.0"))
 ;; Version: 0.1
-;; Keywords: scala, scalariform
 
 ;;; License:
 
@@ -36,7 +35,8 @@
 
 ;;; Code:
 (defgroup scalariform nil
-  "Group for scalariform.")
+  "Group for scalariform."
+  :group 'convenience)
 
 (defcustom scalariform-program "scalariform"
   "Program name for scalariform."
@@ -64,6 +64,7 @@
   :group 'scalariform)
 
 (defun scalariform-call-process (start end buffer)
+  "A process to call scalariform."
   (let ((args '("--stdin")))
     (when scalariform-use-properties-file-p
       (push (format "-p=%s" (f-long scalariform-properties-file)) args))
@@ -73,6 +74,7 @@
 
 ;;;###autoload
 (defun scalariform-format-region (start end)
+  "Format the region."
   (interactive "r")
   (let* ((original-point (point))
          (buffer scalariform-buffer-name)
@@ -89,6 +91,7 @@
 
 ;;;###autoload
 (defun scalariform-format-region-or-buffer ()
+  "Format the region or buffer."
   (interactive)
   (if (region-active-p)
       (scalariform-format-region (region-beginning) (region-end))
