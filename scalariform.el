@@ -35,6 +35,8 @@
 ;; You can also customize the variable `scalariform-program-args' to past extra arguments to scalariform.
 
 ;;; Code:
+(require 'f)
+
 (defgroup scalariform nil
   "Group for scalariform."
   :group 'convenience)
