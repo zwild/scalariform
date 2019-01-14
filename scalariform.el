@@ -71,6 +71,8 @@
 Argument START: region to start.
 Argument END: region to end.
 Argument BUFFER: the buffer to call this process."
+  (unless (executable-find scalariform-program)
+    (error (format "%s is not found." scalariform-program)))
   (let ((args '("--stdin")))
     (when scalariform-use-properties-file-p
       (push (format "-p=%s" (f-long scalariform-properties-file)) args))
