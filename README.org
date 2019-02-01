@@ -8,7 +8,13 @@
    brew install scalariform
    #+end_src
 
-   It's not available in MELPA now. If you use =package.el=, you can install it like this
+
+   It is recommended installed by the MELPA package system.
+   You could install it by ~M-x~: with
+   ~package-install~: ~eshell-prompt-extras~.
+
+
+   If you use =package.el=, you can install it like this
 
    #+begin_src elisp
    (defun package-install-from-raw-github (url)
