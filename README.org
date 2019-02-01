@@ -10,29 +10,10 @@
    brew install scalariform
    #+end_src
 
-
    It is recommended installed by the [[https://github.com/melpa/melpa][MELPA]] package system.
 
    You could install it by ~M-x~: with ~package-install~: ~eshell-prompt-extras~.
 
-
-   If you use =package.el=, you can install it like this
-
-   #+begin_src elisp
-   (defun package-install-from-raw-github (url)
-     (let* ((base-url "https://raw.githubusercontent.com/")
-            (full-url (concat base-url url))
-            (target-dir (expand-file-name "~/.emacs.d/github-pkgs/"))
-            (target-name (car-safe (last (split-string full-url "/" t))))
-            (target (concat target-dir target-name)))
-       (unless (file-exists-p target-dir)
-         (mkdir target-dir))
-       (unless (file-exists-p target)
-         (url-copy-file full-url target t)
-         (package-install-file target))))
-
-   (package-install-from-raw-github "zwild/scalariform/master/scalariform.el")
-   #+end_src
 
 ** Usage
    ~M-x:~ with command ~scalariform-format-region~ or ~scalariform-format-region-or-buffer~.
