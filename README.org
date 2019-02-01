@@ -12,9 +12,8 @@
 
 
    It is recommended installed by the [[https://github.com/melpa/melpa][MELPA]] package system.
-   You could install it by ~M-x~: with
 
-   ~package-install~: ~eshell-prompt-extras~.
+   You could install it by ~M-x~: with ~package-install~: ~eshell-prompt-extras~.
 
 
    If you use =package.el=, you can install it like this
